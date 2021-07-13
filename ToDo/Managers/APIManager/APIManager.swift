@@ -8,7 +8,11 @@
 import Foundation
 import Apollo
 
-final class Apollo {
+protocol ApolloProtocol {
+    var client: ApolloClient { get }
+}
+
+final class Apollo: ApolloProtocol {
     static let shared = Apollo()
     let client: ApolloClient
     
@@ -25,7 +29,10 @@ protocol APIManagerProtocol {
     typealias GetToDoListCompletionHandler = ((_ list: [ToDoModel]?, _ error: Error?) -> Void)
     typealias UpdateToDoCompletionHandler = ((_ status: Bool? ,_ error: Error?) -> Void)
     typealias DeleteToDoCompletionHandler = ((_ error: Error?) -> Void)
-    typealias CreateToDoCompletionHandler = ((_ id: Int?, _ error: Error?)-> Void)
+    typealias CreateToDoCompletionHandler = ((_ model: ToDoModel?, _ error: Error?)-> Void)
+    
+    var apolloClient: ApolloProtocol { get }
+    var createDelegate: APIManagerCreateProtocol? { get set }
     
     func getToDoList(then: @escaping GetToDoListCompletionHandler)
     func updateToDo(id: Int, status: Bool, then: @escaping UpdateToDoCompletionHandler)
@@ -34,7 +41,7 @@ protocol APIManagerProtocol {
 }
 
 final class APIManager: APIManagerProtocol, ObservableObject {
-    var apolloClient: Apollo
+    var apolloClient: ApolloProtocol
     weak var createDelegate: APIManagerCreateProtocol?
     static let shared = APIManager()
     

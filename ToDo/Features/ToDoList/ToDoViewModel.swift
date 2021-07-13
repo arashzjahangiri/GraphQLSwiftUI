@@ -8,8 +8,13 @@
 import Foundation
 import SwiftUI
 
-class ToDoViewModel: ObservableObject {
-    @ObservedObject private var apiManager: APIManager
+protocol ToDoViewModelProtocol {
+    func getToDoList()
+    func updateItem(id: Int)
+}
+
+class ToDoViewModel: ObservableObject, ToDoViewModelProtocol {
+    internal var apiManager: APIManagerProtocol
     @Published var toDoList = [ToDoModel]()
     
     init() {

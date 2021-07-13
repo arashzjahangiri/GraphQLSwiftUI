@@ -7,9 +7,13 @@
 
 import Foundation
 
-class AddToDoViewModel: ObservableObject {
+protocol AddToDoViewModelProtocol {
+    func createToDo(title: String, description: String)
+}
+
+class AddToDoViewModel: ObservableObject, AddToDoViewModelProtocol {
     @Published var toDoCreated: Bool = false
-    private let apiManager: APIManager
+    internal var apiManager: APIManagerProtocol
     
     init() {
         apiManager = APIManager.shared

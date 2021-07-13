@@ -10,6 +10,8 @@
 		664BAD79CADD28A891F8619A /* libPods-ToDo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C50462E629015964C44945 /* libPods-ToDo.a */; };
 		98357FFF58733E94DBEFE81C /* libPods-ToDoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 505787C68D9980B728AFD5A6 /* libPods-ToDoTests.a */; };
 		F403848B269B7E390015081D /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403848A269B7E390015081D /* ToastView.swift */; };
+		F44FDED9269DD3880025DE0B /* AddToDoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44FDED8269DD3880025DE0B /* AddToDoViewModelTests.swift */; };
+		F44FDEDB269DD4160025DE0B /* APIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44FDEDA269DD4160025DE0B /* APIManagerMock.swift */; };
 		F4B3931B269C47680035CF84 /* AddToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3931A269C47680035CF84 /* AddToDoView.swift */; };
 		F4B3931D269C48000035CF84 /* AddToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3931C269C48000035CF84 /* AddToDoViewModel.swift */; };
 		F4B3932E269CA0BA0035CF84 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B3932C269CA0BA0035CF84 /* schema.json */; };
@@ -18,7 +20,7 @@
 		F4B849B22699DBD700FC38ED /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B849B12699DBD700FC38ED /* ToDoListView.swift */; };
 		F4B849B42699DBD900FC38ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B849B32699DBD900FC38ED /* Assets.xcassets */; };
 		F4B849B72699DBD900FC38ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B849B62699DBD900FC38ED /* Preview Assets.xcassets */; };
-		F4B849C22699DBD900FC38ED /* ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B849C12699DBD900FC38ED /* ToDoTests.swift */; };
+		F4B849C22699DBD900FC38ED /* ToDoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B849C12699DBD900FC38ED /* ToDoViewModelTests.swift */; };
 		F4B849CD2699DBD900FC38ED /* ToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B849CC2699DBD900FC38ED /* ToDoUITests.swift */; };
 		F4B849DE269A25F800FC38ED /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B849DD269A25F800FC38ED /* APIManager.swift */; };
 		F4B849E0269A29CF00FC38ED /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F4B849DF269A29CF00FC38ED /* Queries.graphql */; };
@@ -52,6 +54,8 @@
 		B58EC5F514E22BF4AB8017F7 /* Pods-ToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo.debug.xcconfig"; path = "Target Support Files/Pods-ToDo/Pods-ToDo.debug.xcconfig"; sourceTree = "<group>"; };
 		C727E5C24070AFD47DA1E941 /* Pods-ToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoTests.release.xcconfig"; path = "Target Support Files/Pods-ToDoTests/Pods-ToDoTests.release.xcconfig"; sourceTree = "<group>"; };
 		F403848A269B7E390015081D /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		F44FDED8269DD3880025DE0B /* AddToDoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewModelTests.swift; sourceTree = "<group>"; };
+		F44FDEDA269DD4160025DE0B /* APIManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerMock.swift; sourceTree = "<group>"; };
 		F4B3931A269C47680035CF84 /* AddToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoView.swift; sourceTree = "<group>"; };
 		F4B3931C269C48000035CF84 /* AddToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewModel.swift; sourceTree = "<group>"; };
 		F4B3932C269CA0BA0035CF84 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = schema.json; path = ToDo/schema.json; sourceTree = SOURCE_ROOT; };
@@ -63,7 +67,7 @@
 		F4B849B62699DBD900FC38ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4B849B82699DBD900FC38ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4B849BD2699DBD900FC38ED /* ToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4B849C12699DBD900FC38ED /* ToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTests.swift; sourceTree = "<group>"; };
+		F4B849C12699DBD900FC38ED /* ToDoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModelTests.swift; sourceTree = "<group>"; };
 		F4B849C32699DBD900FC38ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4B849C82699DBD900FC38ED /* ToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B849CC2699DBD900FC38ED /* ToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoUITests.swift; sourceTree = "<group>"; };
@@ -128,6 +132,15 @@
 				F403848A269B7E390015081D /* ToastView.swift */,
 			);
 			path = ToastView;
+			sourceTree = "<group>";
+		};
+		F44FDED7269DD3640025DE0B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F4B849C12699DBD900FC38ED /* ToDoViewModelTests.swift */,
+				F44FDED8269DD3880025DE0B /* AddToDoViewModelTests.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		F4B39319269C474E0035CF84 /* AddToDo */ = {
@@ -220,7 +233,8 @@
 		F4B849C02699DBD900FC38ED /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4B849C12699DBD900FC38ED /* ToDoTests.swift */,
+				F44FDEDA269DD4160025DE0B /* APIManagerMock.swift */,
+				F44FDED7269DD3640025DE0B /* ViewModels */,
 				F4B849C32699DBD900FC38ED /* Info.plist */,
 			);
 			path = ToDoTests;
@@ -480,7 +494,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4B849C22699DBD900FC38ED /* ToDoTests.swift in Sources */,
+				F44FDEDB269DD4160025DE0B /* APIManagerMock.swift in Sources */,
+				F4B849C22699DBD900FC38ED /* ToDoViewModelTests.swift in Sources */,
+				F44FDED9269DD3880025DE0B /* AddToDoViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
