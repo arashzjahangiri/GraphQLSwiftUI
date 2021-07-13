@@ -7,7 +7,7 @@ The application uses node.js as backend GraphQL for client, iOS app,  which is r
 Make sure you have node.js and npm installed.
 
 1.git clone https://github.com/arashzjahangiri/GraphQLSwiftUI.git<br />
-2.cd GraphQLSwiftUI/server<br />
+2.cd GraphQLSwiftUI/Server<br />
 3.npm update<br />
 4.node src/index.js<br />
 5.run pod install in the iOS project to install Apollo for iOS.<br />
