@@ -1,5 +1,5 @@
 # GraphQLSwiftUI
-This To-Do app is built upon SwiftUI and GraphQL for CRUD operations.
+This To-Do app is built upon SwiftUI and GraphQL, Apollo, for CRUD operations.
 <br />
 ## Getting Started
 The application uses node.js as backend GraphQL for client, iOS app,  which is running on http://localhost:4000 or any other port on your machine.<br />
