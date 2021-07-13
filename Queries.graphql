@@ -1,0 +1,8 @@
+query ReminderList {
+  reminders {
+    id
+    title
+    description
+    status
+  }
+}

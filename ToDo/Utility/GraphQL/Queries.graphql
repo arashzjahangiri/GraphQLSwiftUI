@@ -1,0 +1,25 @@
+query ToDoList {
+  reminders {
+    id
+    title
+    description
+    status
+  }
+}
+
+mutation createToDo($title: String!, $description: String) {
+    post(title: $title, description: $description) {
+    id
+    title
+    description
+    status
+   }
+}
+
+mutation update($id: Int!, $status: Boolean) {
+    updateStatus(id: $id, status: $status) {
+        id
+        status
+    }
+}
+

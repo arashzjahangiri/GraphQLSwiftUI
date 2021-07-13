@@ -1,0 +1,13 @@
+type Query {
+	reminders: [Reminder]
+}
+
+type Mutation {
+	post(title: String!, description: String): Reminder!
+}
+
+type Reminder {
+	id: ID!
+	title: String!
+	description: String
+}
