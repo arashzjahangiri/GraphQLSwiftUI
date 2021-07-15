@@ -1,4 +1,4 @@
-# GraphQLSwiftUI
+# GraphQLSwiftUI + Node.js Apollo server
 This To-Do app is built upon SwiftUI and GraphQL, Apollo, for CRUD operations.
 <br> Unit tests and also UI tests included.
 <br />
