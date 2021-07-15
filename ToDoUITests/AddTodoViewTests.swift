@@ -40,31 +40,72 @@ class AddTodoViewTests: XCTestCase {
     }
     
     func testAddTodoView() throws {
+        // present AddToDoView
         app.buttons["\(Constants.newToDo)"].tap()
-     
+        
         let navBar = app.navigationBars.element
         XCTAssert(navBar.exists)
-     
-        let name = app.textFields["\(Constants.nameTextField)"]
-        XCTAssert(name.exists)
-     
-        let notes = app.textFields["\(Constants.notesTextField)"]
-        XCTAssert(notes.exists)
-     
-        let add = app.buttons["\(Constants.addButton)"]
-        XCTAssert(add.exists)
-        XCTAssertEqual(add.label, "\(Constants.addButton)")
-     
-        let dismiss = app.buttons["\(Constants.dismissButton)"]
-        XCTAssert(dismiss.exists)
+        
+        let nameTextField = app.textFields["\(Constants.nameTextField)"]
+        XCTAssert(nameTextField.exists)
+        
+        let notesTextField = app.textFields["\(Constants.notesTextField)"]
+        XCTAssert(notesTextField.exists)
+        
+        let addButton = app.buttons["\(Constants.addButton)"]
+        XCTAssert(addButton.exists)
+        XCTAssertEqual(addButton.label, "\(Constants.addButton)")
+        
+        let dismissButton = app.buttons["\(Constants.dismissButton)"]
+        XCTAssert(dismissButton.exists)
     }
     
     func testAddTodoDismissButton() throws {
+        // present AddToDoView
         app.buttons["\(Constants.newToDo)"].tap()
         
-        let dismiss = app.buttons["\(Constants.dismissButton)"]
-        dismiss.tap()
-        XCTAssertFalse(dismiss.waitForExistence(timeout: 0.5))
+        let dismissButton = app.buttons["\(Constants.dismissButton)"]
+        dismissButton.tap()
+        XCTAssertFalse(dismissButton.waitForExistence(timeout: 0.5))
     }
-
+    
+    func testAddButtonWithFilledNameTextField() {
+        // present AddToDoView
+        app.buttons["\(Constants.newToDo)"].tap()
+        
+        let nameTextField = app.textFields["\(Constants.nameTextField)"]
+        nameTextField.tap()
+        nameTextField.typeText("title for my To Do")
+        XCTAssertNotEqual(nameTextField.value as! String, "")
+        
+        // test AddToDoView dismissed
+        let dismissButton = app.buttons["\(Constants.dismissButton)"]
+        dismissButton.tap()
+        XCTAssertFalse(dismissButton.waitForExistence(timeout: 0.5))
+        
+        // test ToDoListView appeared
+        let buttons = app.buttons
+        let addButton = app.buttons["\(Constants.newToDo)"]
+        XCTAssertEqual(buttons.count, 1)
+        XCTAssert(addButton.exists)
+        XCTAssertEqual(addButton.label, "\(Constants.newToDo)")
+    }
+    
+    func testAddButtonWithEmptyNameTextField() {
+        // present AddToDoView
+        app.buttons["\(Constants.newToDo)"].tap()
+        
+        let nameTextField = app.textFields["\(Constants.nameTextField)"]
+        nameTextField.tap()
+        nameTextField.typeText(String(XCUIKeyboardKey.delete.rawValue))
+        
+        let addButton = app.buttons["\(Constants.addButton)"]
+        addButton.tap()
+        
+        // test staying on AddToDoView
+        let dismissButton = app.buttons["\(Constants.dismissButton)"]
+        dismissButton.tap()
+        XCTAssertTrue(dismissButton.waitForExistence(timeout: 0.5))
+    }
+    
 }
