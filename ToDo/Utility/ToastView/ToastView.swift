@@ -46,13 +46,15 @@ struct ToastView: View {
                 Image(systemName: dataModel.type.typeImage)
                 Text(dataModel.title)
             }.font(.headline)
+            .minimumScaleFactor(0.7)
             .foregroundColor(.primary)
             .padding([.top,.bottom],20)
             .padding([.leading,.trailing],40)
             .background(dataModel.type.typeColor)
             .clipShape(Capsule())
         }
-        .frame(width: UIScreen.main.bounds.width / 1.25)
+        .padding(.bottom, 20)
+        .padding([.leading,.trailing],40)
         .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
         .onTapGesture {
             withAnimation {
