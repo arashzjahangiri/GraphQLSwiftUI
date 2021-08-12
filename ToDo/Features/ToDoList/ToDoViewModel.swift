@@ -13,7 +13,7 @@ protocol ToDoViewModelProtocol {
     func updateItem(id: Int)
 }
 
-class ToDoViewModel: ObservableObject, ToDoViewModelProtocol {
+final class ToDoViewModel: ObservableObject, ToDoViewModelProtocol {
     internal var apiManager: APIManagerProtocol
     @Published var toDoList = [ToDoModel]()
     

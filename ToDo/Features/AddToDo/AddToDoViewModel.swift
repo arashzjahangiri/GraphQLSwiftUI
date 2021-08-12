@@ -11,7 +11,7 @@ protocol AddToDoViewModelProtocol {
     func createToDo(title: String, description: String)
 }
 
-class AddToDoViewModel: ObservableObject, AddToDoViewModelProtocol {
+final class AddToDoViewModel: ObservableObject, AddToDoViewModelProtocol {
     @Published var toDoCreated: Bool = false
     internal var apiManager: APIManagerProtocol
     
