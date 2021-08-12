@@ -35,7 +35,7 @@ struct ToDoListView: View {
                     }).sheet(isPresented: $presentingModally) {
                         viewModel.getToDoList()
                     } content: {
-                        AddToDoView(viewModel: AddToDoViewModel(), presentedAsModal: $presentingModally)
+                        AddToDoView(viewModel: AddToDoViewModel.factory(), presentedAsModal: $presentingModally)
                     }
 
                 }

@@ -23,8 +23,7 @@ class AddToDoViewModelTests: XCTestCase {
         // Given
         APIManagerMock.shared.apolloClient = APolloMock.shared
         APIManagerMock.shared.successfulResult = true
-        let viewModel = AddToDoViewModel()
-        viewModel.apiManager = APIManagerMock.shared
+        let viewModel = AddToDoViewModel(apiManager: APIManagerMock.shared)
         
         // When
         viewModel.createToDo(title: "to do 1", description: "this is for unit testing")
@@ -38,8 +37,7 @@ class AddToDoViewModelTests: XCTestCase {
         // Given
         APIManagerMock.shared.apolloClient = APolloMock.shared
         APIManagerMock.shared.successfulResult = false
-        let viewModel = AddToDoViewModel()
-        viewModel.apiManager = APIManagerMock.shared
+        let viewModel = AddToDoViewModel(apiManager: APIManagerMock.shared)
         
         // When
         viewModel.createToDo(title: "to do 1", description: "this is for unit testing")

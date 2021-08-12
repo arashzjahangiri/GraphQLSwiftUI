@@ -11,7 +11,9 @@ import SwiftUI
 struct ToDoApp: App {
     var body: some Scene {
         WindowGroup {
-            ToDoListView(viewModel: ToDoViewModel())
+            let apiManager = APIManager.shared
+            let viewModel = ToDoViewModel(apiManager: apiManager)
+            ToDoListView(viewModel: viewModel)
         }
     }
 }

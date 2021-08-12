@@ -34,14 +34,14 @@ class ToDoUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testTodoListViewAppearance() throws {
+    func testTodoListViewAppearance() {
         // UI tests must launch the application that they test.
         
         let texts = app.staticTexts
         XCTAssertEqual(texts.count, 1)
     }
     
-    func testAddButtonExists() throws {
+    func testAddButtonExists() {
         // UI tests must launch the application that they test.
         
         let buttons = app.buttons

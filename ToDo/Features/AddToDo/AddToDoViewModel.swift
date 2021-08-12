@@ -15,8 +15,8 @@ final class AddToDoViewModel: ObservableObject, AddToDoViewModelProtocol {
     @Published var toDoCreated: Bool = false
     internal var apiManager: APIManagerProtocol
     
-    init() {
-        apiManager = APIManager.shared
+    init(apiManager: APIManagerProtocol) {
+        self.apiManager = apiManager
     }
     
     func createToDo(title: String, description: String) {
@@ -25,5 +25,11 @@ final class AddToDoViewModel: ObservableObject, AddToDoViewModelProtocol {
                 self?.toDoCreated = true
             }
         }
+    }
+}
+
+extension AddToDoViewModel {
+    static func factory() -> AddToDoViewModel {
+        return AddToDoViewModel(apiManager: APIManager.shared)
     }
 }

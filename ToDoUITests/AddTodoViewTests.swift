@@ -33,13 +33,13 @@ class AddTodoViewTests: XCTestCase {
         app.launch()
     }
 
-    func testAddTodoViewAppearance() throws {
+    func testAddTodoViewAppearance() {
         app.buttons["\(Constants.newToDo)"].tap()
         let addTodoNavBarTitle = app.staticTexts["\(Constants.newToDoNavBarTitle)"]
         XCTAssert(addTodoNavBarTitle.waitForExistence(timeout: 0.5))
     }
     
-    func testAddTodoView() throws {
+    func testAddTodoView() {
         // present AddToDoView
         app.buttons["\(Constants.newToDo)"].tap()
         
@@ -60,7 +60,7 @@ class AddTodoViewTests: XCTestCase {
         XCTAssert(dismissButton.exists)
     }
     
-    func testAddTodoDismissButton() throws {
+    func testAddTodoDismissButton() {
         // present AddToDoView
         app.buttons["\(Constants.newToDo)"].tap()
         

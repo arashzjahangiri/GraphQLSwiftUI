@@ -22,8 +22,7 @@ class ToDoViewModelTests: XCTestCase {
         // Given
         APIManagerMock.shared.apolloClient = APolloMock.shared
         APIManagerMock.shared.successfulResult = true
-        let viewModel = ToDoViewModel()
-        viewModel.apiManager = APIManagerMock.shared
+        let viewModel = ToDoViewModel(apiManager: APIManagerMock.shared)
         
         // When
         viewModel.getToDoList()
@@ -45,8 +44,7 @@ class ToDoViewModelTests: XCTestCase {
         // Given
         APIManagerMock.shared.apolloClient = APolloMock.shared
         APIManagerMock.shared.successfulResult = true
-        let viewModel = ToDoViewModel()
-        viewModel.apiManager = APIManagerMock.shared
+        let viewModel = ToDoViewModel(apiManager: APIManagerMock.shared)
         viewModel.getToDoList()
         
         // When
@@ -71,8 +69,7 @@ class ToDoViewModelTests: XCTestCase {
         // Given
         APIManagerMock.shared.apolloClient = APolloMock.shared
         APIManagerMock.shared.successfulResult = false
-        let viewModel = ToDoViewModel()
-        viewModel.apiManager = APIManagerMock.shared
+        let viewModel = ToDoViewModel(apiManager: APIManagerMock.shared)
         
         // When
         viewModel.getToDoList()
@@ -86,8 +83,7 @@ class ToDoViewModelTests: XCTestCase {
         // Given
         APIManagerMock.shared.apolloClient = APolloMock.shared
         APIManagerMock.shared.successfulResult = true
-        let viewModel = ToDoViewModel()
-        viewModel.apiManager = APIManagerMock.shared
+        let viewModel = ToDoViewModel(apiManager: APIManagerMock.shared)
         viewModel.getToDoList()
         
         // When
@@ -106,8 +102,7 @@ class ToDoViewModelTests: XCTestCase {
         // Given
         APIManagerMock.shared.apolloClient = APolloMock.shared
         APIManagerMock.shared.successfulResult = true
-        let viewModel = ToDoViewModel()
-        viewModel.apiManager = APIManagerMock.shared
+        let viewModel = ToDoViewModel(apiManager: APIManagerMock.shared)
         viewModel.getToDoList()
         viewModel.toDoList[0].status = nil
         // When
@@ -126,8 +121,7 @@ class ToDoViewModelTests: XCTestCase {
         // Given
         APIManagerMock.shared.apolloClient = APolloMock.shared
         APIManagerMock.shared.successfulResult = true
-        let viewModel = ToDoViewModel()
-        viewModel.apiManager = APIManagerMock.shared
+        let viewModel = ToDoViewModel(apiManager: APIManagerMock.shared)
         // get list
         viewModel.getToDoList()
         

@@ -17,9 +17,9 @@ final class ToDoViewModel: ObservableObject, ToDoViewModelProtocol {
     internal var apiManager: APIManagerProtocol
     @Published var toDoList = [ToDoModel]()
     
-    init() {
-        apiManager = APIManager.shared
-        apiManager.createDelegate = self
+    init(apiManager: APIManagerProtocol) {
+        self.apiManager = apiManager
+        self.apiManager.createDelegate = self
     }
     
     func getToDoList() {
