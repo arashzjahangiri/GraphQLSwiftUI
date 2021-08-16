@@ -33,11 +33,10 @@ struct ToDoListView: View {
                             Text("New ToDo")
                         }
                     }).sheet(isPresented: $presentingModally) {
-                        viewModel.getToDoList()
+                        
                     } content: {
-                        AddToDoView(viewModel: AddToDoViewModel.factory(), presentedAsModal: $presentingModally)
+                        viewModel.routeToAddToDoView(presentedAsModal: $presentingModally)
                     }
-
                 }
             }
             .overlay(overlayView: ToastView.init(dataModel: ToastView.DataModel.init(title: "Updating was successful", type: .success), show: $showingToastSuccess), show: $showingToastSuccess)

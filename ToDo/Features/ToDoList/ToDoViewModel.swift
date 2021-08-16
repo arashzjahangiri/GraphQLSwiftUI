@@ -14,7 +14,7 @@ protocol ToDoViewModelProtocol {
 }
 
 final class ToDoViewModel: ObservableObject, ToDoViewModelProtocol {
-    internal var apiManager: APIManagerProtocol
+    private var apiManager: APIManagerProtocol
     @Published var toDoList = [ToDoModel]()
     
     init(apiManager: APIManagerProtocol) {
@@ -59,6 +59,10 @@ final class ToDoViewModel: ObservableObject, ToDoViewModelProtocol {
                 toDoList[index].status = status
             }
         }
+    }
+        
+    func routeToAddToDoView(presentedAsModal: Binding<Bool>) -> some View {
+        return AddToDoView(viewModel: AddToDoViewModel.factory(), presentedAsModal: presentedAsModal)
     }
 }
 
